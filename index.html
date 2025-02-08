@@ -1,95 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Dev Frontend</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Pavani | Desenvolvedor Frontend</title>
+  <!-- Link para o CSS principal -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Ícones do Font Awesome e fontes do Google -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Perfil -->
-        <section class="profile">
-            <div class="profile-image">
-                <img src="img/perfil.jpg" alt="Foto de Perfil">
-            </div>
-            <h1>Lucas Pavani</h1>
-            <h2>Desenvolvedor Front-end</h2>
-            <p class="bio">Apaixonado por criar experiências digitais intuitivas e responsivas, 
-               com foco em performance e usabilidade.
-            </p>
-            <p>Formando em Análise e Desenvolvimento de Sistemas 5/6.</p>
-          
+  <div class="container">
+    <!-- ===================== -->
+    <!-- Seção HERO (Apresentação) -->
+    <!-- ===================== -->
+    <section class="hero-content">
+      <h1>
+        Olá, eu sou <br>
+        <span class="name">Lucas Pavani</span><br>
+        <span class="role">Desenvolvedor de experiências web</span>
+      </h1>
+      <!-- Botão de Chamada para Ação (CTA) com mensagem do WhatsApp atualizada -->
+      <a href="https://wa.me/5521996778199?text=Ol%C3%A1%2C%20Lucas!%20Vamos%20iniciar%20um%20projeto%3F" 
+         class="cta-button" 
+         target="_blank">
+         Transforme sua ideia em realidade digital <i class="fas fa-arrow-right"></i>
+      </a>
+      <!-- Bloco de Links de Contato -->
+      <div class="contact-links">
+        <a href="https://github.com/LucasPavani19" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/lucas-pavani-de-assis-94b014131" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://wa.me/5521996778199?text=Ol%C3%A1%2C%20Lucas!%20Vamos%20iniciar%20um%20projeto%3F" 
+           target="_blank" 
+           aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </section>
 
-            <a href="https://wa.me/5521996778199?text=Olá!%20Gostaria%20de%20solicitar%20orçamento%20de%20um%20site!" class="contact-button">Solicite um Orçamento</a>
-        </section>
+    <!-- ===================== -->
+    <!-- Seção PORTFÓLIO -->
+    <!-- ===================== -->
+    <section class="portfolio-content">
+      <!-- Projeto 1: Letícia Pavan - Psicóloga -->
+      <div class="project-card">
+        <!-- Imagem do projeto envolvida em um link -->
+        <a href="https://leticiapavan.netlify.app/" target="_blank">
+          <img src="img/leticia.png" alt="Letícia Pavan - Psicóloga">
+        </a>
+        <div class="project-info">
+          <h3>
+            <a href="https://leticiapavan.netlify.app/" target="_blank">
+              Letícia Pavan - Psicóloga
+            </a>
+          </h3>
+          <div class="project-links">
+            <!-- Ícone de redirecionamento removido; mantido apenas o link do GitHub -->
+            <a href="https://github.com/LucasPavani19/leticiapavan" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
 
-        <!-- Projetos -->
-        <section class="projects">
-            <div class="project-card">
-                <img src="img/leticia.png" alt="Letícia Pavan - Psicóloga">
-                <div class="project-info">
-                    <h3><a href="https://leticiapavan.netlify.app/" target="_blank">Letícia Pavan - Psicóloga</a></h3>
-                    <div class="project-links">
-                        <a href="https://leticiapavan.netlify.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="https://github.com/LucasPavani19/leticiapavan" target="_blank"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="img/gabilima.png" alt="Gabi Lima - Estética">
-                <div class="project-info">
-                    <h3><a href="https://gabilima-estetica.netlify.app/" target="_blank">Gabi Lima - Estética</a></h3>
-                    <div class="project-links">
-                        <a href="https://gabilima-estetica.netlify.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="https://github.com/LucasPavani19/gabilimaestetica" target="_blank"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="img/drmarquin.png" alt="Dr. Marcus Junior - Psiquiatra">
-                <div class="project-info">
-                    <h3><a href="https://previa-drmarquin.netlify.app/" target="_blank">Dr. Marcus Junior - Psiquiatra</a></h3>
-                    <div class="project-links">
-                        <a href="https://previa-drmarquin.netlify.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="https://github.com/LucasPavani19/previa-drmarquin" target="_blank"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section> 
-          <!-- Habilidades -->
-          <section class="skills">
-            <div class="skill-item">
-                <i class="fab fa-html5"></i>
-                <span>HTML5</span>
-            </div>
-            <div class="skill-item">
-                <i class="fab fa-css3-alt"></i>
-                <span>CSS3</span>
-            </div>
-            <div class="skill-item">
-                <i class="fab fa-js"></i>
-                <span>JavaScript</span>
-            </div>
-            <div class="skill-item">
-                <i class="fab fa-react"></i>
-                <span>React</span>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-mobile-alt"></i>
-                <span>Responsive</span>
-            </div>
-        </section>
-        <footer class="contact-links">
-            <a href="https://github.com/lucaspavani19" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/lucas-pavani-de-assis-94b014131" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:lucaspavani132@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            <a href="https://wa.me/5521996778199" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </footer>
-        <!-- Links de Contato -->
-       
-    </div>
+      <!-- Projeto 2: Gabi Lima - Estética -->
+      <div class="project-card">
+        <a href="https://gabilima-estetica.netlify.app/" target="_blank">
+          <img src="img/gabilima.png" alt="Gabi Lima - Estética">
+        </a>
+        <div class="project-info">
+          <h3>
+            <a href="https://gabilima-estetica.netlify.app/" target="_blank">
+              Gabi Lima - Estética
+            </a>
+          </h3>
+          <div class="project-links">
+            <a href="https://github.com/LucasPavani19/gabilimaestetica" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projeto 3: Dr. Marcus Junior - Psiquiatra -->
+      <div class="project-card">
+        <a href="https://previa-drmarquin.netlify.app/" target="_blank">
+          <img src="img/drmarquin.png" alt="Dr. Marcus Junior - Psiquiatra">
+        </a>
+        <div class="project-info">
+          <h3>
+            <a href="https://previa-drmarquin.netlify.app/" target="_blank">
+              Dr. Marcus Junior - Psiquiatra
+            </a>
+          </h3>
+          <div class="project-links">
+            <a href="https://github.com/LucasPavani19/previa-drmarquin" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Script de animações -->
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,308 +1,220 @@
-:root {
-    --bg-color: #0a0a0a;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --text-color: #ffffff;
-    --accent-color: #925b5b;
-    --card-border: rgba(255, 255, 255, 0.1);
-}
-
+/* ====================================
+   RESET & VARIÁVEIS
+==================================== */
+/* Zera margens e define box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  /* Variáveis para cores e transição */
+  :root {
+    --color-bg: #121212;       /* Fundo escuro */
+    --color-text: #ffffff;      /* Texto branco */
+    --color-accent: #ff5252;    /* Cor de destaque */
+    --transition-speed: 0.3s;   /* Velocidade de transição */
+  }
+  
+  /* ====================================
+     ESTILO GLOBAL
+  ==================================== */
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
     font-family: 'Roboto', sans-serif;
-    background: url(img/fundo01.jpg);
-    color: var(--text-color);
     line-height: 1.6;
     min-height: 100vh;
-}
-
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 1.8rem;
-}
-
-h3 {
-    font-size: 1.5rem;
-}
-
-.container {
+  }
+  
+  /* Container principal centralizado */
+  .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-/* Perfil */
-.profile {
-    text-align: center;
-    padding: 2rem;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    border: 1px solid var(--card-border);
-}
-
-.profile-image {
-    width: 250px;
-    height: 250px;
-    margin: 0 auto 2rem;
-    border-radius: 50%;
-    padding: 5px;
-    background: linear-gradient(45deg, var(--accent-color), var(--glass-bg));
-}
-
-.profile-image img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--bg-color);
-}
-
-.profile h1 {
-    font-size: 2.5rem;
-    margin: 0.5rem 0;
-    background: linear-gradient(45deg, var(--text-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.profile h2 {
-    font-size: 1.2rem;
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-}
-
-.bio {
-    max-width: 600px;
-    margin: 0 auto;
-    opacity: 0.9;
-}
-
-/* Habilidades */
-.skills {
-    display: flex;
-    justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.skill-item {
+  }
+  
+  /* ====================================
+     SEÇÃO HERO (APRESENTAÇÃO)
+  ==================================== */
+  .hero-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    border: 1px solid var(--card-border);
-    min-width: 100px;
-    transition: transform 0.3s ease;
-}
-
-.skill-item:hover {
-    transform: translateY(-5px);
-}
-
-.skill-item i {
+    /* Para PC: padding-top maior; para mobile, será sobrescrito */
+    padding-top: 10rem;
+    justify-content: flex-start;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+  }
+  
+  .hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .hero-content .name {
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+  
+  .hero-content .role {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Botão de CTA */
+  .cta-button {
+    background: var(--color-accent);
+    color: var(--color-text);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  
+  .cta-button:hover {
+    background: #e04848;
+  }
+  
+  /* ====================================
+     LINKS DE CONTATO
+  ==================================== */
+  .contact-links {
+    margin-top: 2rem; /* Espaço acima dos ícones */
+  }
+  
+  .contact-links a {
     font-size: 2rem;
-    color: var(--accent-color);
-}
-
-/* Projetos */
-.projects {
+    color: var(--color-text);
+    margin-right: 1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .contact-links a:visited {
+    color: var(--color-text);
+  }
+  
+  .contact-links a:hover {
+    transform: translateY(-3px);
+    color: var(--color-accent);
+  }
+  
+  /* ====================================
+     SEÇÃO PORTFÓLIO
+  ==================================== */
+  .portfolio-content {
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-}
-
-.project-card {
-    position: relative;
+  }
+  
+  /* ------------------------------------
+     Cartões de Projeto
+  ------------------------------------ */
+  .project-card {
+    background: #1e1e1e;
     border-radius: 10px;
     overflow: hidden;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--card-border);
-    height: 300px; /* Defina uma altura fixa para o card */
-}
-
-.project-card img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;              /* Estado inicial para animação */
+    transform: translateY(20px);
+  }
+  
+  .project-card.animate {
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Imagem do projeto */
+  .project-card img {
     width: 100%;
-    height: 250px; /* Ajuste a altura conforme necessário */
+    height: 200px;
     object-fit: cover;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-}
-
-.project-card:hover img {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-.project-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  }
+  
+  /* Informações do Projeto */
+  .project-info {
     padding: 1rem;
-    background: #000000; /* Fundo preto sólido */
+    background: #141414;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
-    height: 60px; /* Defina uma altura fixa para o fundo preto */
-}
-
-.project-info h3 {
-    color: var(--text-color);
-    font-size: 1.1rem;
-    max-width: 70%;
-    white-space: nowrap; /* Impede quebra de linha */
-    overflow: hidden; /* Oculta texto que excede o espaço */
-    text-overflow: ellipsis; /* Adiciona "..." ao final do texto que não cabe */
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.project-links a {
-    color: var(--text-color);
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.project-links a:hover {
-    color: var(--accent-color);
-}
-
-/* Links de Contato */
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
-.contact-links a {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.contact-links a:hover {
-    color: var(--accent-color);
-    transform: translateY(-3px);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-
-    .skills {
-        gap: 1rem;
-    }
-
-    .skill-item {
-        min-width: 80px;
-    }
-
-    .profile h1 {
-        font-size: 2rem;
-    }
-}
-
-.project-card:hover img {
-    opacity: 1;
-    transform: scale(1.05);
-    transition: all 0.3s ease;
-} 
-
-.project-card {
-    overflow: hidden; /* Evita que o conteúdo exceda o container */
-}
-
-.project-card img {
-    width: 100%; /* Garante que a imagem ocupe todo o espaço do card */
-    transition: transform 0.3s ease; /* Suaviza a transição do zoom */
-}
-
-.project-card img:hover {
-    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
-}
-
-.project-info h3 a {
-    color: white; /* Cor do link */
-    text-decoration: none; /* Remove o sublinhado */
-}
-
-.project-info h3 a:visited {
-    color: white; /* Mantém a cor branca após o clique */
-}
-
-.project-card {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--card-border);
-    height: 300px; /* Defina uma altura fixa para o card */
-}
-
-.project-card img {
-    width: 100%;
-    height: 100%; /* Ajuste a altura da imagem para preencher o card */
-    object-fit: cover;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-}
-
-.project-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0.5rem; /* Ajuste o padding para evitar espaço extra */
-    background: #000000; /* Fundo preto sólido */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1;
-    height: 60px; /* Defina uma altura fixa para o fundo preto */
-}
-
-.contact-button {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 0.75rem 1.5rem; /* Aumente o padding para botões mais visíveis */
-    border-radius: 5px;
+  }
+  
+  /* Título do projeto sem underline */
+  .project-info h3 a {
+    color: var(--color-text);
+    transition: transform var(--transition-speed);
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s; /* Adicione transform para animação */
-    display: inline-block; /* Para que o botão se comporte como um bloco */
-    margin-top: 1rem; /* Espaçamento acima do botão */
-    white-space: nowrap; /* Impede quebra de linha no botão */
-}
-
-.contact-button:hover {
-    background-color: #ff1a4d; /* Cor ao passar o mouse */
-    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
-}
-
+  }
+  
+  /* ------------------------------------
+     Links (Ícones) dos Projetos
+  ------------------------------------ */
+  .project-links {
+    display: flex;
+    gap: 1rem;  /* Espaço entre os ícones */
+    align-items: center;
+  }
+  
+  .project-links a {
+    font-size: 1.8rem;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .project-links a:hover {
+    transform: translateY(-3px);
+    color: var(--color-accent);
+  }
+  
+  /* ====================================
+     ANIMAÇÕES
+  ==================================== */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ====================================
+     RESPONSIVIDADE
+  ==================================== */
+  /* Em telas menores, reduz o padding-top da seção HERO */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .hero-content {
+      padding-top: 2rem;
+    }
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  }
+  
