@@ -1,18 +1,20 @@
-
-document.addEventListener("DOMContentLoaded", function() {
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        // Se 30% ou mais do elemento estiver visível:
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-  
-    // Observa cada cartão de projeto para disparar a animação
-    document.querySelectorAll(".project-card").forEach(card => {
-      observer.observe(card);
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona todos os project-cards EXCETO o primeiro
+    const projectCards = document.querySelectorAll('.project-card:not(:first-child)');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 1s ease forwards';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
     });
-  });
+
+    projectCards.forEach(card => {
+        observer.observe(card);
+    });
+});
   

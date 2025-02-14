@@ -131,7 +131,10 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;              /* Estado inicial para animação */
+  }
+  
+  .project-card:not(:first-child) {
+    opacity: 0;              /* Estado inicial apenas para cards que não são o primeiro */
     transform: translateY(20px);
   }
   
@@ -212,9 +215,15 @@
     }
     .hero-content {
       padding-top: 2rem;
+      padding-bottom: 1rem; /* Reduzir espaço entre hero e projetos */
     }
     .hero-content h1 {
       font-size: 2rem;
+    }
+    
+    /* Garantir que o primeiro projeto seja visível */
+    .portfolio-content {
+      margin-top: 1rem;
     }
   }
   
