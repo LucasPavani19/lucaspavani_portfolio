@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona todos os project-cards EXCETO o primeiro
+    // Seleciona apenas os cards que não são o primeiro
     const projectCards = document.querySelectorAll('.project-card:not(:first-child)');
     
     const observer = new IntersectionObserver((entries) => {

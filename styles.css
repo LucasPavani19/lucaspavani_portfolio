@@ -82,6 +82,7 @@
     text-decoration: none;
     display: inline-block;
     margin-top: 1rem;
+    text-align: center;
   }
   
   .cta-button:hover {
@@ -131,15 +132,13 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .project-card:not(:first-child) {
-    opacity: 0;              /* Estado inicial apenas para cards que não são o primeiro */
+    opacity: 0;              /* Estado inicial para todos os cards */
     transform: translateY(20px);
   }
   
-  .project-card.animate {
+  .project-card:first-child {
     animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s; /* Mesmo delay do hero-content */
   }
   
   .project-card:hover {
